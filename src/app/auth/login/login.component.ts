@@ -15,10 +15,10 @@ export class LoginComponent implements OnInit {
 
   /* formbuilder is the service that helps create form groups and form controls instances */
   constructor(private fb: FormBuilder, private authService: AuthService, private router: Router) {}
-  ngOnInit() {   
+  ngOnInit(): void{   
     this.loginForm = this.fb.group({
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required]]
+        userName: ['', Validators.required], // Changed 'name' to 'userName' to match the API model
+        password: ['', Validators.required]
     });
   }
   onSubmit() {  
@@ -26,6 +26,8 @@ export class LoginComponent implements OnInit {
     if (this.loginForm.valid) {
       console.log('Login form submitted',this.loginForm.value);
       /*service call for login user */
+      this.authService.login(this.loginForm.value);
+      console.log('Logged in successfully',this.loginForm.value);
       this.router.navigate(['/dashboard']);
     }
   }

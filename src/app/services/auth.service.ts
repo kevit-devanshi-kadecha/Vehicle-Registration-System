@@ -6,12 +6,14 @@ import { tap , catchError } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'https://localhost:7095/signup';
+  private signupApiUrl = 'https://localhost:7095/signup';
+  private loginApiUrl = 'https://localhost:7095/login';
+
   constructor(private http: HttpClient, private router:Router) { }
 
   register(userdata: any) {
     console.log('Calling the register api', userdata);
-    this.http.post(this.apiUrl, userdata).pipe(
+    this.http.post<any>(this.signupApiUrl, userdata).pipe(
       tap(response => {
         if(response)
         {
@@ -22,6 +24,24 @@ export class AuthService {
       }),
       catchError(error => {
         alert(error.error?.Message || 'User registration failed');
+        throw error;
+      })
+    ).subscribe();
+  }
+
+  login(userdata: any){
+    console.log('Calling the login api', userdata);
+    this.http.post<any>(this.loginApiUrl, userdata).pipe(
+      tap(response => {
+        if(response)
+        { 
+          console.log('User login successful', response);
+          alert(response); 
+          this.router.navigate(['/dashboard']);
+        }
+      }),
+      catchError(error => {
+        alert(error.error?.Message || 'User login failed');
         throw error;
       })
     ).subscribe();
