@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
       console.log('Login form submitted',this.loginForm.value);
       /*service call for login user */
       this.authService.login(this.loginForm.value);
-      console.log('Logged in successfully',this.loginForm.value);
       this.router.navigate(['/dashboard']);
     }
   }

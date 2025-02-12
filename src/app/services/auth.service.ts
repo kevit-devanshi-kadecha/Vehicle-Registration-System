@@ -36,7 +36,7 @@ export class AuthService {
         if(response)
         { 
           console.log('User login successful', response);
-          alert(response); 
+          localStorage.setItem('token', response.token);
           this.router.navigate(['/dashboard']);
         }
       }),

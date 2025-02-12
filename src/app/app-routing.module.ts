@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { RegisterComponent } from './auth/register/register.component';
 
 const routes: Routes = [
   {
@@ -13,8 +12,8 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'auth/register', 
-    pathMatch: 'full',
+    path: 'home',
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   }
 ];
 
