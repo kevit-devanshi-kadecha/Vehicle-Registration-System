@@ -19,13 +19,29 @@ p {
     justify-content: center;
     margin-top: 20px;
 }
-.buttons button {
+.buttons .btn-primary {
     margin: 0 10px;
     padding: 10px 20px;
     font-size: 1rem;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
+    background-color: #1a6583;
     color: white;
     cursor: pointer;
+}
+.buttons .btn-primary:hover {
+    background-color: #146e74b0;
+}
+.buttons .btn-secondary {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+}
+.buttons .btn-secondary:hover {
+    background-color: #555555a2;
 }
