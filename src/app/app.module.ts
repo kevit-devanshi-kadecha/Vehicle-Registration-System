@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
-import { HomeModule } from './home/home/home.module';
+import { HomeModule } from './home/home.module';
 
 @NgModule({
   declarations: [
