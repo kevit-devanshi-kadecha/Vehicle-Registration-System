@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -10,23 +11,22 @@ import { Router } from '@angular/router';
 export class RegisterComponent implements OnInit {
   registerForm!: FormGroup;
   submitted = false;
-  constructor(private formBuilder: FormBuilder, private router: Router) { }
+  constructor(private formBuilder: FormBuilder, private authService : AuthService, private router: Router) { }
    
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
-      name: ['', Validators.required],
+      userName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(8)]],
-      confirmPassword: ['', [Validators.required, Validators.minLength(8)]],
-      phoneNumber: [''] // Optional field
+      password: ['', [Validators.required, Validators.minLength(8)]]
+      // confirmPassword: ['', [Validators.required, Validators.minLength(8)]],
+      // phoneNumber: [''] // Optional field
     });
   }
 
   onSubmit() {
     this.submitted = true;
     if (this.registerForm.valid) {
-      console.log('Register form submitted',this.registerForm.value);
-      this.router.navigate(['/login']);
+      this.authService.register(this.registerForm.value);
     }
   }
   goToLoginPage()

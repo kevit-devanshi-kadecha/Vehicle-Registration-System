@@ -4,6 +4,7 @@ import { AuthModule } from './auth/auth.module';
 import { AppComponent } from './app.component';
 import { RouterModule } from '@angular/router';
 import { NavbarComponent } from './shared/navbar/navbar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { NavbarComponent } from './shared/navbar/navbar.component';
   imports: [
     BrowserModule,
     RouterModule.forRoot([]),
+    HttpClientModule,
     AuthModule
   ],
   providers: [],
