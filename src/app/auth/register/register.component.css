@@ -1,4 +1,4 @@
-.container {
+ .register-container {
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
@@ -24,14 +24,25 @@ h2 {
 }
 
 .form-group {
-    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     margin-bottom: 15px;
 }
 
 .form-group label {
-    display: block;
-    margin-bottom: 5px;
+    flex: 1;
+    width: 100%;
     font-weight: bold;
+    margin-right: 10px;
+    text-align: right;
+}
+
+.form-group input {
+    flex: 2;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 .form-control {
@@ -50,17 +61,21 @@ h2 {
 }
 
 .btn-primary {
-    width: 100%;
+    width: 100%; /* Makes the button responsive */
+    max-width: 200px; /* Sets a maximum width */
     padding: 10px;
     background-color: #007bff;
+    color: white;
     border: none;
     border-radius: 5px;
-    color: #fff;
     cursor: pointer;
+    display: block;
+    margin: 10px auto; /* Centers the button */
+    text-align: center;
 }
 
 .btn-primary:disabled {
-    background-color: #6c757d;
+    background-color: #076369;
     cursor: not-allowed;
 }
 
@@ -76,4 +91,25 @@ a {
 
 a:hover {
     text-decoration: underline;
+} 
+
+/*
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+p {
+    text-align: center;
+}
+*/
