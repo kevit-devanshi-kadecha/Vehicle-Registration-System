@@ -32,4 +32,8 @@ export class LoginComponent implements OnInit {
     const authRoutes = ['/login', '/signup'];
     return authRoutes.includes(this.router.url);
   }
+  goToRegisterPage()
+  {
+    this.router.navigate(['/register']);
+  }
 }
