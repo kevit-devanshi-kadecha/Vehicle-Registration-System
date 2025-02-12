@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   loginForm!: FormGroup;
+  submitted = false;
 
   /* formbuilder is the service that helps create form groups and form controls instances */
   constructor(private fb: FormBuilder,/* private authService: AuthService*/ private router: Router) {}
@@ -20,8 +21,9 @@ export class LoginComponent implements OnInit {
     });
   }
   onSubmit() {  
+    this.submitted = true;
     if (this.loginForm.valid) {
-      console.log(this.loginForm.value);
+      console.log('Login form submitted',this.loginForm.value);
       /*service call for login user */
       this.router.navigate(['/dashboard']);
     }

@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Vehicle-Registration-System';
+  loading = false;
+  isAuthPage(): boolean {
+    return false;
+  }
 }
