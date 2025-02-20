@@ -24,10 +24,16 @@ export class LoginComponent implements OnInit {
   onSubmit() {  
     this.submitted = true;
     if (this.loginForm.valid) {
-      console.log('Login form submitted',this.loginForm.value);
-      /*service call for login user */
-      this.authService.login(this.loginForm.value);
-      this.router.navigate(['/dashboard']);
+      console.log('Login form submitted', this.loginForm.value);
+      this.authService.login(this.loginForm.value).subscribe(
+        response => {
+          console.log('Logged in successfully', response);
+          this.router.navigate(['/dashboard']);
+        },
+        error => {
+          console.error('Login error', error);
+        }
+      );
     }
   }
   isAuthPage(): boolean {

@@ -26,11 +26,19 @@ export class RegisterComponent implements OnInit {
   onSubmit() {
     this.submitted = true;
     if (this.registerForm.valid) {
-      this.authService.register(this.registerForm.value);
+      console.log('Register form submitted', this.registerForm.value);
+      this.authService.register(this.registerForm.value).subscribe(
+        response => {
+          console.log('Registered successfully', response);
+          this.router.navigate(['/login']);
+        },
+        error => {
+          console.error('Registration error', error);
+        }
+      );
     }
   }
-  goToLoginPage()
-  {
+  goToLoginPage(){
     this.router.navigate(['/login']);
   }
 }
