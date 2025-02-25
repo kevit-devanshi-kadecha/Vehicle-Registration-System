@@ -17,4 +17,8 @@
     color: white;
     text-decoration: none;
   }
+  .sidebar ul li a.active-link {
+    color: rgba(192, 183, 183, 0.726);
+    font-weight: bold;
+  }
   

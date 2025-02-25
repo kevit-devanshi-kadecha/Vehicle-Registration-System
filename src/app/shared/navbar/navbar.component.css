@@ -1,0 +1,40 @@
+/* Style for the navbar */
+.navbar {
+    background-color: #e3f2fd;
+    margin-bottom: 6px;
+  }
+  
+  /* Style for the navbar brand */
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  /* Style for the navbar links */
+  .navbar-nav .nav-link {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000;
+    transition: color 0.3s ease;
+  }
+  
+  /* Hover effect for the navbar links */
+  .navbar-nav .nav-link:hover {
+    color: #0b5761a4;
+  }
+  
+  /* Active link style */
+  .navbar-nav .nav-link.active {
+    font-weight: bold;
+    color: #0f8b43;
+  }
+  
+  /* Style for the navbar toggler */
+  .navbar-toggler {
+    border: none;
+  }
+  
+  /* Style for the navbar toggler icon */
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%280, 0, 0, 0.5%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+  }
